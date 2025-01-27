@@ -584,9 +584,10 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
     position: relative;
     align-items: center;
-    overflow: hidden;
+    overflow-x: hidden;
     background: linear-gradient(360deg, rgba(241,241,254,1) 0%, rgba(185,176,192,1) 20%, rgba(119,100,120,1) 45%, rgba(89,65,87,1) 70%);
 }
 
@@ -628,8 +629,9 @@ body {
     display: flex;
     flex-direction: row;
     gap: 25px;
-    margin: 10% 0 0 0;
-    height: 25vh;
+    margin: 10% 0 5% 0;
+    height: 100vh;
+    box-sizing: border-box;
 }
 
 .work-cards-1,.work-cards-2{
@@ -721,11 +723,14 @@ body {
 }
 
 .popup-content {
+    display: flex;
+    flex-direction: column;
     font-size: 16px;
     color: #333;
     text-align: center;
     padding: 10px;
     overflow-x:hidden;
+    align-items: center;
 }
 
 .close-button {
@@ -764,16 +769,17 @@ body {
     opacity: 1;
 }
 
-.back-content-title {
+.back-content-title,.back-content-title2{
     font-family: 'SF Pro Display Medium';
     color: black;
     font-size: clamp(.8em,4em,8em);
+    width: fit-content;
     margin: 0 10px 30px 10px;
     text-overflow: ellipsis;
     transition: color .32s ease, scale .64s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.back-content-title:hover{
+.back-content-title:hover, .back-content-title2:hover{
     color: #333;
     scale: 1.025;
 }
@@ -815,6 +821,14 @@ body {
     fill: #06c;
 }
 
+.iJava text {
+    transition: fill .24s ease;
+}
+
+.iJava:hover text {
+    fill: #FF7F00;
+}
+
 @media screen and (max-width: 1920px) {
 
 }
@@ -830,6 +844,13 @@ body {
         padding: 0;
     }
 
+    .sub-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
     .card-container {
         gap: 30px; /* Réduit l'écart entre les cartes */
     }
@@ -841,6 +862,10 @@ body {
 
     .card-title1, .card-title2, .language-title{
         font-size: 3em;
+    }
+
+    .card2-text,.card-text {
+        font-size: 1.2em;
     }
 
     .visible {
@@ -856,6 +881,27 @@ body {
         height: 100%;
         width: 100%;
         align-items: center;
+    }
+
+    .back-content-title {
+        font-size: 3em
+    }
+
+    .back-content-title2 {
+        font-size: 2em;
+    }
+
+    .back-content-project-type-text {
+        flex-direction: column;
+    }
+
+    .links-container {
+        margin: 10% 0 0 0;
+    }
+
+    .popup-card.active {
+        height: fit-content;
+        overflow: auto;
     }
 
     .title {
