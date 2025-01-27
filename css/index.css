@@ -708,7 +708,7 @@ body {
     height: 100%;
     width: 100%;
     max-height: 70vh;
-    max-width: 60vw;
+    max-width: 65vw;
 }
 
 .popup-card.closing {
@@ -725,6 +725,7 @@ body {
     color: #333;
     text-align: center;
     padding: 10px;
+    overflow-x:hidden;
 }
 
 .close-button {
@@ -733,14 +734,15 @@ body {
     right: 10px;
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 44px;
     color: #333;
     cursor: pointer;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, transform .24s ease;
 }
 
 .close-button:hover {
     color: #ff0000;
+    transform: rotate(90deg);
 }
 
 .overlay {
@@ -764,14 +766,54 @@ body {
 
 .back-content-title {
     font-family: 'SF Pro Display Medium';
-    font-size: clamp(2em,4em,8em);
-    margin: 0 0 30px 0;
+    color: black;
+    font-size: clamp(.8em,4em,8em);
+    margin: 0 10px 30px 10px;
+    text-overflow: ellipsis;
+    transition: color .32s ease, scale .64s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.back-content-title:hover{
+    color: #333;
+    scale: 1.025;
 }
 
 .back-content-text {
     font-family: 'SF Pro Text Medium';
+    margin: 0 2.5% 0 2.5%;
+    font-size: 1.2em;
+    letter-spacing: -.01em;
 }
 
+.no-scroll {
+    overflow: hidden; /* Empêche le défilement */
+}
+
+.back-content-project-type-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'SF Pro Text Medium';
+    margin: 2.5% 10px 30px 10px;
+}
+
+.links-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2.5% 0 0 0;
+    gap: 20px;
+}
+
+.link1 path,.link2 path {
+    transition: fill .32s ease;
+}
+
+.link1:hover path,.link2:hover path {
+    fill: #06c;
+}
 
 @media screen and (max-width: 1920px) {
 

@@ -13,6 +13,8 @@ function popup(cardElement) {
     // Ajout de la classe active
     popupCard.classList.add('active');
     overlay.classList.add('active');
+
+    document.body.classList.add('no-scroll');
 }
 
 function closePopup() {
@@ -27,4 +29,6 @@ function closePopup() {
     setTimeout(() => {
         popupCard.classList.remove('active', 'closing');
     }, 500); // Durée correspondant aux transitions CSS
+
+    document.body.classList.remove('no-scroll');
 }
