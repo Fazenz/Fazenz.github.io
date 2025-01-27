@@ -602,6 +602,7 @@ body {
 
 .hiddenn {
     opacity: 0;
+    overflow: hidden;
     transition: opacity 1.2s ease-out, transform 1.75s ease-out;
 }
 
